@@ -1,13 +1,18 @@
+/* Style du canevas */
 canvas {
+    /* Hipiti hopiti la magie du centrage en css */
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
+    /* Super style de fou pour le canevas (un rectangle noir quoi) */
     border: solid black 1px;
 }
 
+/* Style du body */
 body {
+    /* Suppression de ces saletés de barres de scroll */
     overflow: hidden;
 }
