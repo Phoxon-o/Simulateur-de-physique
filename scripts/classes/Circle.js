@@ -9,7 +9,7 @@ export default class Circle extends Body {
     }
 
     update(deltaTime, canvas) {
-        if(this.position.y > canvas.height - this.radius) {
+        if(this.position.y >= canvas.height - this.radius) {
             this.velocity = Vector2.zero;
 
             if (this.acceleration.y > 0) {
