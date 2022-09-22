@@ -39,7 +39,7 @@ setInterval(() => {
         // Affichage des lignes
         context.stroke();
     
-        // Calcul physiques du cercle
+        // Calculs physiques du cercle
         circle.update(0.01, canvas);
     }
 }, 10);
