@@ -22,8 +22,8 @@ let circle = new Circle(new Vector2(50, 50), 20);
 
 // Boucle de dessin et de calculs physiques
 setInterval(() => {
-    // Boucle for afin de réaliser plus de mise à jour physiques pour chaque interval 
-    // (L'interval ayant des limites au niveau du timeout)
+    // Boucle for afin de réaliser plus de mise à jour physiques pour chaque intervalle 
+    // (L'intervalle ayant des limites au niveau du timeout)
     for(let i = 0; i < 10; i++) {
         // Effacement du canevas à chaque nouvelle itération
         context.clearRect(0, 0, canvas.width, canvas.height);
