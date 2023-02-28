@@ -18,4 +18,9 @@ export default class Vector2 {
     mulConst(k) {
         return new Vector2(this.x * k, this.y * k);
     }
+
+    // Méthode de division par une constante
+    divConst(k) {
+        return new Vector2(this.x / k, this.y / k);
+    }
 }

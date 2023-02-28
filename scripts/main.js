@@ -17,8 +17,12 @@ let context = canvas.getContext('2d');
     canvas.height = window.innerHeight * 0.95;
 // }
 
-// Création d'un cercle
-let circle = new Circle(new Vector2(50, 50), 20);
+// Création d'un cercle (ou plutôt un disque, physiquement parlant, car plein)
+let circle = new Circle(new Vector2(50, 50), 50 / 1000, 0.5, 20);
+
+// Ajout d'une force et d'un moment, pour tester
+circle.addForce(new Vector2(10, 0));
+circle.addTorque(50);
 
 // Boucle de dessin et de calculs physiques
 setInterval(() => {
@@ -37,6 +41,15 @@ setInterval(() => {
         // Dessin du cercle
         context.arc(circle.position.x, circle.position.y, circle.radius, 0, Math.PI * 2);
         // Affichage des lignes
+        context.stroke();
+
+        // Dessin d'un rayon en rouge, pour voir la rotation
+        context.beginPath();
+        context.strokeStyle = "red";
+        context.lineWidth = 1;
+        context.moveTo(circle.position.x, circle.position.y);
+        // On utilise la trigonométrie pour le tracer par rapport à l'angle du disque
+        context.lineTo(circle.position.x + Math.cos(circle.angle) * circle.radius, circle.position.y + Math.sin(circle.angle) * circle.radius);
         context.stroke();
     
         // Calculs physiques du cercle
